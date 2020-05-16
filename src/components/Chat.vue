@@ -32,7 +32,7 @@
                       }`
                 }`
               "
-              >{{ `${!message.alert ? `${message.content} says: ` : ''}` }}
+              >{{ `${!message.alert ? `${message.username} says: ` : ''}` }}
             </v-list-item-title>
             <v-list-item-subtitle
               ><p
