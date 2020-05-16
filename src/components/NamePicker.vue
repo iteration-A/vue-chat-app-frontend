@@ -13,16 +13,22 @@
 </template>
 
 <script>
-import { mapMutations } from 'vuex'
+import { mapMutations, mapGetters } from 'vuex'
 
 export default {
   data: () => ({
     usernameSelected: ''
   }),
+  computed: {
+    ...mapGetters(['socket'])
+  },
   methods: {
     ...mapMutations(['username']),
     updateUsername() {
-      if (this.usernameSelected !== '') this.username(this.usernameSelected)
+      if (this.usernameSelected !== '') {
+        this.username(this.usernameSelected)
+        this.socket.emit('new-user', this.usernameSelected)
+      }
     }
   }
 }

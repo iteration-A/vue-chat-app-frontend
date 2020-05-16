@@ -13,6 +13,9 @@ const routes = [
     components: {
       Header,
       Home
+    },
+    meta: {
+      title: 'Skere'
     }
   }
 ]
