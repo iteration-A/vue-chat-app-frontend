@@ -86,6 +86,15 @@ export default {
   updated() {
     const container = this.$el.querySelector('#list')
     container.scrollTo(0, container.scrollHeight)
+  },
+  created() {
+    if (!('Notification' in window)) return
+    Notification.requestPermission()
+  },
+  mounted() {
+    document.addEventListener('visibilitychange', () => {
+      if (document.visibilityState === 'visible') document.title = 'wannacry'
+    })
   }
 }
 </script>
