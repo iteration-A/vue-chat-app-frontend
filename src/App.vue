@@ -14,16 +14,16 @@ export default {
   created() {
     this.$store.state.socket.on('message', message => {
       this.$store.state.messages.push(message)
-      const notificationTitle = `New message ( ${message.username} )`
-      const notificationBody = message.content
+      //const notificationTitle = `New message ( ${message.username} )`
+      //const notificationBody = message.content
 
       // Check that the message isn't from the same user
       if (message.username === this.$store.state.username) return
       document.title = `New message ( ${message.username} )`
-      new Notification(notificationTitle, {
-        body: notificationBody,
-        icon: '/favicon.ico'
-      })
+      //new Notification(notificationTitle, {
+      //  body: notificationBody,
+      //  icon: '/favicon.ico'
+      //})
     })
     this.$store.state.socket.on('user', user => {
       this.$store.state.messages.push({
