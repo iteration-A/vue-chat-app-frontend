@@ -4,6 +4,7 @@ import Vuex from 'vuex'
 import io from 'socket.io-client'
 
 const serverUrl = process.env.VUE_APP_URL
+console.log(serverUrl)
 const socket = io(serverUrl)
 
 Vue.use(Vuex)
